@@ -22,7 +22,7 @@
  * @author     Andrew Hancox <andrewdchancox@googlemail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class tool_mergeusers_quiz_testcase extends advanced_testcase {
+class quiz_test extends advanced_testcase {
     /**
      * Configure the test.
      * Create two courses with a quiz in each.

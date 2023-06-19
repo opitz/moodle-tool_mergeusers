@@ -16,6 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 use mod_quiz\grade_calculator;
+use mod_quiz\quiz_settings;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -303,7 +304,8 @@ class QuizAttemptsMerger extends GenericTableMerger
             foreach ($quizzes as $quiz) {
                 // https://moodle.org/mod/forum/discuss.php?d=258979
                 // recalculate grades for affected quizzes.
-                ($quiz->get_grade_calculator)->recompute_all_final_grades($quiz);
+                $quizobj = quiz_settings::create($quiz->id);
+                $quizobj->get_grade_calculator()->recompute_all_final_grades();
             }
         }
     }
